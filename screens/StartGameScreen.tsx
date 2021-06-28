@@ -15,7 +15,7 @@ import Colors from "../constants/colors";
 import Input from "../components/Input";
 import NumberContainer from "../components/NumberContainer";
 
-const StartGameScreen = () => {
+const StartGameScreen = (props: { onStartGame: Function }) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [confirmed, setConfirmed] = useState<boolean>();
   const [selectedNumber, setSelectedNumber] = useState<number>();
@@ -51,7 +51,7 @@ const StartGameScreen = () => {
     Keyboard.dismiss();
   };
 
-  let confirmedOutput: JSX.Element | string = "";
+  let confirmedOutput: JSX.Element = <Text></Text>;
   if (confirmed) {
     confirmedOutput = (
       <Card style={startScreenStyles.summaryContainer}>
@@ -60,7 +60,7 @@ const StartGameScreen = () => {
         <Button
           color={Colors.accentColor}
           title="START GAME"
-          onPress={() => {}}
+          onPress={() => props.onStartGame(selectedNumber)}
         />
       </Card>
     );

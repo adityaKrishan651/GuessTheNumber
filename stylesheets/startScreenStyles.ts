@@ -29,7 +29,7 @@ const startScreenStyles = StyleSheet.create({
     textAlign: "center",
   },
   summaryContainer: {
-    marrginTop: 20,
+    marginTop: 20,
     alignItems: "center",
   },
 });
